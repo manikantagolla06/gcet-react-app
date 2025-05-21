@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>ECommerce: By Manikanta kiran Golla</h1>
+        <h1>Online Store Manikanta kiran Golla</h1>
         <hr />
       </header>
       <main>
@@ -17,7 +17,7 @@ function App() {
           <hr />
       </main>
       <footer>
-          <h1>Footer</h1>
+          <h5>@2006 rights reserved</h5>
       </footer>
     </>
   )
