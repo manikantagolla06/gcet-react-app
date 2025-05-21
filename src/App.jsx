@@ -7,7 +7,19 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-   <h1>React Store</h1>
+    <>
+      <header>
+        <h1>ECommerce: By Manikanta kiran Golla</h1>
+        <hr />
+      </header>
+      <main>
+          <h2>Product Lists</h2>
+          <hr />
+      </main>
+      <footer>
+          <h1>Footer</h1>
+      </footer>
+    </>
   )
 }
 
