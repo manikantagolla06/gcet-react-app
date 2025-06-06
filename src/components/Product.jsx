@@ -9,7 +9,7 @@ export default function Product() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(${API}/products/all);
+      const res = await axios.get(`${API}/products/all`);
       console.log("Fetched products:", res.data);
       // If response has a products field, use res.data.products
       if (Array.isArray(res.data)) {
