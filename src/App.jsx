@@ -1,3 +1,16 @@
+import { useState, createContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import Product from "./components/Product";
+import Cart from "./components/Cart";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Logout from "./components/Logout";
+import Header from "./components/Header";
+import Order from "./components/Order";
+import Footer from "./components/Footer";
+
 // Context
 export const AppContext = createContext();
 
