@@ -17,7 +17,14 @@ function App() {
   const [user, setUser] = useState({});
   return (
     <div>
-      <AppContext.Provider value={{ users, setUsers, user, setUser }}>
+      <AppContext.Provider value={{ users,
+          setUsers,
+          user,
+          setUser,
+          products,
+          setProducts,
+          cart,
+          setCart, }}>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -25,6 +32,7 @@ function App() {
             <Route path="/" element={<Product />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/order" element={<Order />}></Route>
             <Route path="/logout" element={<Logout />}></Route>
             <Route path="/register" element={<Register />}></Route>
           </Routes>

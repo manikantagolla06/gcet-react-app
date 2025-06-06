@@ -1,0 +1,11 @@
+.App-Product-Row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.App-Product-Row div {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid gray;
+}

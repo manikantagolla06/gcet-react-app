@@ -12,9 +12,11 @@ export default function Login() {
     // const found = users.find(
     //   (value) => value.email === user.email && value.pass === user.pass
     // );
-    const url = `${API}/login`;
+    const url = `${API}/users/login`;
     const found = await axios.post(url, user);
-    if (found.data.token) {
+    console.log(found)
+
+    if (found.data.email) {
       setUser(found.data);
       Navigate("/");
     } else {

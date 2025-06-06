@@ -11,7 +11,7 @@ export default function Register() {
   const handleSubmit = async () => {
     //setUsers([...users, user]);
     try {
-      const url = `${API}/register`;
+      const url = `${API}/users/register`;
       await axios.post(url, user);
       Navigate("/login");
     } catch (err) {
