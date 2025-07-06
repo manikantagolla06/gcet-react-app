@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
+import { useLocation } from "react-router-dom";
 
 export default function Order() {
   const [orders, setOrders] = useState([]);
@@ -8,10 +9,11 @@ export default function Order() {
   const [error, setError] = useState(null);
   const { user } = useContext(AppContext);
   const API = import.meta.env.VITE_API_URL;
+  const location = useLocation(); // <-- get navigation state
 
   const fetchOrders = async () => {
     try {
-      if (!user?.email) return; 
+      if (!user?.email) return;
       setLoading(true);
       const res = await axios.get(`${API}/orders/${user.email}`);
       setOrders(res.data);
@@ -27,7 +29,14 @@ export default function Order() {
     if (user?.email) {
       fetchOrders();
     }
-  }, [user]); 
+  }, [user]);
+
+  // 🔁 Trigger refetch if navigated with state { newOrder: true }
+  useEffect(() => {
+    if (location.state?.newOrder && user?.email) {
+      fetchOrders();
+    }
+  }, [location.state, user]);
 
   return (
     <div className="orders-container">
