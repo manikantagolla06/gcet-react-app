@@ -1,0 +1,38 @@
+.orders-container {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.orders-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.order-box {
+  background-color: #fce8d5; 
+  border: 1px solid #e0c7b7;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px 20px;
+  min-width: 250px;
+  max-width: 300px;
+  transition: transform 0.2s ease;
+}
+
+.order-box:hover {
+  transform: translateY(-3px);
+}
+
+.order-box p {
+  margin: 8px 0;
+  color: #4a3b2f;
+}

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import { useEffect } from "react";
 import axios from "axios";
-import "./Order.css"; // Add this line for CSS
+
 
 export default function Order() {
   const [orders, setOrders] = useState([]);
