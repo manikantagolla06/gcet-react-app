@@ -9,78 +9,74 @@ export default function Cart() {
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
-  // Recalculate orderValue whenever cart or products changes
+  // Recalculate order value whenever cart changes
   useEffect(() => {
-    setOrderValue(
-      products.reduce((sum, value) => {
-        return sum + value.price * (cart[value.pid] ?? 0);
-      }, 0)
-    );
+    const value = products.reduce((sum, item) => {
+      return sum + item.price * (cart[item.pid] ?? 0);
+    }, 0);
+    setOrderValue(value);
   }, [cart, products]);
 
+  // Handle quantity increment
   const increment = (id) => {
-    const newCart = { ...cart, [id]: (cart[id] ?? 0) + 1 };
-    setCart(newCart);
+    const updatedCart = { ...cart, [id]: (cart[id] || 0) + 1 };
+    setCart(updatedCart);
   };
 
+  // Handle quantity decrement
   const decrement = (id) => {
-    const newQty = (cart[id] ?? 0) - 1;
-    const newCart = { ...cart };
-    if (newQty > 0) {
-      newCart[id] = newQty;
+    const updatedCart = { ...cart };
+    if ((updatedCart[id] || 0) > 1) {
+      updatedCart[id] -= 1;
     } else {
-      delete newCart[id];
+      delete updatedCart[id];
     }
-    setCart(newCart);
+    setCart(updatedCart);
   };
 
+  // Place order
   const placeOrder = async () => {
     try {
       const url = `${API}/orders/new`;
-      await axios.post(url, { email: user.email, orderValue: orderValue });
-      setCart({}); // Clear cart only after successful order
-      navigate("/order");
-    } catch (error) {
-      console.error("Order placement failed", error);
+      await axios.post(url, {
+        email: user.email,
+        orderValue: orderValue,
+      });
+      setCart({});
+      navigate("/order", { state: { newOrderPlaced: true } }); // Pass flag
+    } catch (err) {
+      console.error("Error placing order:", err);
     }
-  };
-
-  const loginToOrder = () => {
-    navigate("/login");
   };
 
   return (
     <div>
       <h2>My Cart</h2>
-
       {products &&
         products.map(
-          (value) =>
-            cart[value.pid] && (
-              <div key={value.pid}>
+          (product) =>
+            cart[product.pid] && (
+              <div key={product.pid}>
                 <p>
-                  <strong>{value.name}</strong> - ${value.price}
+                  {product.name} - ${product.price} × {cart[product.pid]} = $
+                  {product.price * cart[product.pid]}
                 </p>
-                <button onClick={() => decrement(value.pid)}>-</button>
-                {cart[value.pid]}
-                <button onClick={() => increment(value.pid)}>+</button>
-                = ${value.price * cart[value.pid]}
+                <button onClick={() => decrement(product.pid)}>-</button>
+                <button onClick={() => increment(product.pid)}>+</button>
               </div>
             )
         )}
 
       <hr />
-      <h3>Order Value: ${orderValue}</h3>
+      <h3>Total: ${orderValue}</h3>
       <hr />
-
-      {user.name ? (
+      {user?.name ? (
         <button onClick={placeOrder} disabled={orderValue === 0}>
           Place Order
         </button>
       ) : (
-        <button onClick={loginToOrder}>Login to Order</button>
+        <button onClick={() => navigate("/login")}>Login to Order</button>
       )}
-      <hr />
     </div>
   );
 }
