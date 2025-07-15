@@ -1,3 +1,15 @@
+/* Center the login-page-center using flexbox, no fixed position */
+/* Center the login-page-center using flexbox, fill parent */
+.login-page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 80vh;
+  background: none;
+  box-sizing: border-box;
+}
+
 .login-container {
   background-color: rgba(255, 255, 255, 0.85);
   max-width: 400px;

@@ -1,0 +1,15 @@
+/* Simple full-width footer always at the bottom of content */
+.footer-fixed {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  position: relative;
+  left: 0;
+  margin: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  z-index: 10;
+}

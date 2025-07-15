@@ -1,5 +1,5 @@
 .header {
-  background-color: rgba(30, 30, 30, 0.85); /* light soft black */
+  background-color: rgb(0, 0, 0); /* light soft black */
   padding: 14px 20px;
   width: 100vw;           /* full viewport width */
   box-sizing: border-box; /* include padding in width */
@@ -35,7 +35,7 @@
 .header hr {
   margin-top: 15px;
   border: none;
-  border-top: 1px solid #444;
+  border-top: 1px solid #303030;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
