@@ -9,7 +9,7 @@ export default function Header() {
     <nav className="navbar fixed-top bg-body-tertiary">
       <div className="container-fluid" style={{backgroundColor : 'rgb(110, 165, 165)'}}>
         <Link className="navbar-brand d-flex align-items-center" to="/" style={{ fontFamily: 'Lobster, cursive', fontWeight: 700, fontSize: '2rem', letterSpacing: '1px' }}>
-          Men Accessories Shop
+          Gaming Accessories Store
         </Link>
         <div className="d-flex flex-row ms-auto">
           <Link className="nav-link px-3" to="/">Home</Link>
