@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 /* Table container and scroll */
 .orders-table-container {
   width: 500px;
   max-width: 100%;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   text-align: center;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .orders-table-scroll {
@@ -18,24 +21,28 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .orders-table thead tr {
-  background: #f6f8fa;
+  background: #e2e8f0; /* light blue-gray */
 }
 
-.orders-table th, .orders-table td {
+.orders-table th,
+.orders-table td {
   padding: 10px 8px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #cbd5e1; /* soft gray */
   font-size: 1rem;
+  color: #1e293b; /* dark slate */
 }
 
 .orders-table th {
-  font-weight: 700;
+  font-weight: 600;
+  background-color: #f1f5f9;
 }
 
 .orders-table td {
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .orders-table td:nth-child(1),
@@ -44,7 +51,7 @@
 }
 
 .order-cancel-btn {
-  background: #ff4d4f;
+  background: #ef4444; /* red-500 */
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -57,26 +64,30 @@
   min-width: 70px;
   display: inline-block;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
+
 .order-cancel-btn:hover {
-  background: #d9363e;
+  background: #dc2626; /* red-600 */
 }
 
 /* Ensure action column stays fixed width and vertically centered */
-.orders-table td:last-child, .orders-table th:last-child {
+.orders-table td:last-child,
+.orders-table th:last-child {
   width: 90px;
   text-align: center;
   vertical-align: middle;
 }
+
 .orders-container {
   padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .orders-title {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #333;
+  color: #0f172a; /* slate-900 */
 }
 
 .orders-list {
@@ -88,14 +99,15 @@
 }
 
 .order-box {
-  background-color: #fce8d5; 
-  border: 1px solid #e0c7b7;
+  background-color: #e0f2fe; /* light blue */
+  border: 1px solid #bae6fd; /* sky blue border */
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   padding: 16px 20px;
   min-width: 250px;
   max-width: 300px;
   transition: transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .order-box:hover {
@@ -104,5 +116,5 @@
 
 .order-box p {
   margin: 8px 0;
-  color: #4a3b2f;
+  color: #1e3a8a; /* blue-900 */
 }

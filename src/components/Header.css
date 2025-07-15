@@ -1,41 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .header {
-  background-color: rgb(0, 0, 0); /* light soft black */
-  padding: 14px 20px;
-  width: 100vw;           /* full viewport width */
-  box-sizing: border-box; /* include padding in width */
+  background-color: #1e293b; /* dark navy blue */
+  padding: 20px 24px;
+  width: 100vw;
+  box-sizing: border-box;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  border-radius: 0;       /* no rounding if you want flush edges */
+  border-radius: 0;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f1f1f1;
+  font-family: 'Poppins', sans-serif;
+  color: #e2e8f0;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header h1 {
   margin: 0 0 12px 0;
   font-size: 2rem;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
+  text-align: center;
 }
 
 .header a {
   text-decoration: none;
-  color: #a8d0ff;
+  color: #90cdf4; /* soft blue */
   font-weight: 500;
-  font-size: 0.9rem;
-  margin: 0 6px;
+  font-size: 0.95rem;
+  margin: 0 10px;
   transition: color 0.3s ease;
 }
 
 .header a:hover {
-  color: #e0eaff;
+  color: #bee3f8;
   text-decoration: underline;
 }
 
 .header hr {
-  margin-top: 15px;
+  margin-top: 18px;
   border: none;
-  border-top: 1px solid #303030;
+  border-top: 1px solid #334155;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
