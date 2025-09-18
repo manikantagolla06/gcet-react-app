@@ -53,7 +53,7 @@ export default function Order() {
                           ))}
                         </ul>
                       ) : (
-                        <span style={{ color: '#bbb' }}>3 items</span>
+                        <span style={{ color: '#bbb' }}>No items</span>
                       )}
                     </td>
                     <td>
