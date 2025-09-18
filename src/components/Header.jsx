@@ -12,13 +12,13 @@ export default function Header() {
           Gaming Accessories Store
         </Link>
         <div className="d-flex flex-row ms-auto">
-          <Link className="nav-link px-3" to="/">Home</Link>
-          <Link className="nav-link px-3" to="/cart">Cart</Link>
-          <Link className="nav-link px-3" to="/order">Order</Link>
+          <Link className="nav-link px-3" to="/">Home </Link>
+          <Link className="nav-link px-3" to="/cart">Cart </Link>
+          <Link className="nav-link px-3" to="/order">Order </Link>
           {user && (user.name || user.email) ? (
-            <Link className="nav-link px-3" to="/logout">Logout</Link>
+            <Link className="nav-link px-3" to="/logout">Logout </Link>
           ) : (
-            <Link className="nav-link px-3" to="/login">Login</Link>
+            <Link className="nav-link px-3" to="/login">Login </Link>
           )}
         </div>
       </div>
